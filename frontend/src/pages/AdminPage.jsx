@@ -5,8 +5,8 @@ function AdminPage() {
     const [code, setCode] = useState('');
 
     const handleVerify = () => {
-        axios.post('http://localhost:5000/api/tokens/verify', { code })
-            .then(response => alert('Token verified and used'))
+        axios.post('http://localhost:5000/mess/tokens/verify', { code })
+            .then(response => alert('Token verified'))
             .catch(error => alert(error.response.data.message));
     };
 

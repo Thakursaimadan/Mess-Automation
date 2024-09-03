@@ -22,6 +22,7 @@ exports.generateToken = async (req, res) => {
 exports.verifyToken = async (req, res) => {
     const { code } = req.body;
     try {
+        console.log("sabgbg")
         const token = await Token.findOne({ code });
         if (!token) return res.status(404).json({ message: 'Token not found' });
         if (token.isUsed) return res.status(400).json({ message: 'Token already used' });
